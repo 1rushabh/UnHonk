@@ -10,7 +10,7 @@ ESP8266WebServer server(80);
 
 String webString="";
 
-int switchPin = D6;                     // switch is connected to pin 2
+int switchPin = D8;                     // switch is connected to pin 8
 volatile unsigned int switchPresses = 0;       
 int flag = 0;
 int switchState = 0;
@@ -56,8 +56,8 @@ void setup()
   Serial.println("HTTP server started");
 }
 
-void loop() {
-
+void loop() 
+{
   switchState = digitalRead(switchPin);
 
     while (switchState == LOW && flag == 0)
@@ -77,4 +77,4 @@ void loop() {
     }
    
     server.handleClient();
-// Test Line}
+}
